@@ -4,3 +4,8 @@ Assets/SteamVR/Extras/SteamVR_TestIK.unity.meta
 Assets/SteamVR/Extras/SteamVR_TestThrow.unity
 Assets/SteamVR/Extras/SteamVR_TestThrow.unity.meta
 Assets/SteamVR/Scenes/example.unity.meta
+TEMP/*
+.gitignore
+*.sln
+obj/Debug/*
+.vs/
