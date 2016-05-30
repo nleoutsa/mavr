@@ -9,8 +9,7 @@ public class PickupParent : MonoBehaviour
     SteamVR_TrackedObject tracked_obj;
     SteamVR_Controller.Device device;
 
-
-    List<Rigidbody> tossedObjects = new List<Rigidbody>();
+    public const float TOSS_HANDICAP = 5.0F;
 
     // This function is always called before any Start functions 
     // and also just after a prefab is instantiated. 
@@ -27,9 +26,9 @@ public class PickupParent : MonoBehaviour
         // Create variable to represent input device (hand controller)
         device = SteamVR_Controller.Input((int)tracked_obj.index);
 
-        if (device.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad) && tossedObjects.Count > 0)
+        if (device.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad))
         {
-            resetTossedObjectPosition();
+            resetGame();
         }
     }
 
@@ -52,40 +51,37 @@ public class PickupParent : MonoBehaviour
                 Debug.Log("You have released the trigger while parenting " + col.name);
 
                 col.gameObject.transform.SetParent(null);
-                col.attachedRigidbody.isKinematic = col.attachedRigidbody.GetComponent<TossableObject>().isKinematic;
+                col.attachedRigidbody.isKinematic = false;
 
-                tossChildObject(col.attachedRigidbody);
+                tossObject(col.attachedRigidbody);
             };
         }
     }
 
-    private void tossChildObject(Rigidbody rigidbody)
+    private void tossObject(Rigidbody rigidbody)
     {
-
         Transform origin = tracked_obj.origin ? tracked_obj.origin : tracked_obj.transform.parent;
 
         if (origin != null)
         {
-            rigidbody.velocity = origin.TransformVector(device.velocity);
-            rigidbody.angularVelocity = origin.TransformVector(device.angularVelocity);
+            rigidbody.velocity = origin.TransformVector(device.velocity) * TOSS_HANDICAP;
+            rigidbody.angularVelocity = origin.TransformVector(device.angularVelocity) * TOSS_HANDICAP;
         } else
         {
-            rigidbody.velocity = device.velocity;
-            rigidbody.angularVelocity = device.angularVelocity;
+            rigidbody.velocity = device.velocity * TOSS_HANDICAP;
+            rigidbody.angularVelocity = device.angularVelocity * TOSS_HANDICAP;
         }
-
-        // Add tossed object to list of tossed objects.
-        tossedObjects.Add(rigidbody);
     }
 
-    private void resetTossedObjectPosition()
+    private void resetGame()
     {
-        tossedObjects[0].transform.position = tossedObjects[0].GetComponent<TossableObject>().initialPosition;
-        tossedObjects[0].velocity = Vector3.zero;
-        tossedObjects[0].angularVelocity = Vector3.zero;
-
-        // Remove object tossed least recently from list of tossed objects.
-        // This way, we reset object positions in order of when they were tossed.
-        tossedObjects.RemoveAt(0);
+        foreach (TossableObject obj in FindObjectsOfType<TossableObject>())
+        {
+            obj.ResetObject();
+        }
+        foreach (CylinderBehavior obj in FindObjectsOfType<CylinderBehavior>())
+        {
+            obj.ResetObject();
+        }
     }
 }

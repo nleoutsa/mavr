@@ -15,4 +15,12 @@ public class TossableObject : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void ResetObject()
+    {
+        GetComponent<Rigidbody>().transform.position = initialPosition;
+        GetComponent<Rigidbody>().isKinematic = isKinematic;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+    }
 }
