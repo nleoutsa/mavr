@@ -9,7 +9,7 @@ public class PickupParent : MonoBehaviour
     SteamVR_TrackedObject tracked_obj;
     SteamVR_Controller.Device device;
 
-    public const float TOSS_HANDICAP = 5.0F;
+    public const float TOSS_HANDICAP = 2.0F;
 
     // This function is always called before any Start functions 
     // and also just after a prefab is instantiated. 
@@ -33,28 +33,53 @@ public class PickupParent : MonoBehaviour
     }
 
     void OnTriggerStay(Collider col)
-    {
-        Debug.Log("Collied with " + col.name + " and called OnTriggerStay");
-        
+    {        
         if (col.attachedRigidbody)
         {   
             if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
             {
-                Debug.Log("You have collided with " + col.name + " while holding down touch on the trigger");
-
-                col.attachedRigidbody.isKinematic = true;
-                col.gameObject.transform.SetParent(gameObject.transform);
+                if (col.gameObject.GetComponent<TossableObject>())
+                {
+                    col.attachedRigidbody.isKinematic = true;
+                    col.gameObject.transform.SetParent(gameObject.transform);
+                }
             };
 
             if (device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger))
             {
-                Debug.Log("You have released the trigger while parenting " + col.name);
-
-                col.gameObject.transform.SetParent(null);
-                col.attachedRigidbody.isKinematic = false;
-
-                tossObject(col.attachedRigidbody);
+                if (col.gameObject.GetComponent<TossableObject>())
+                {
+                    col.gameObject.transform.SetParent(null);
+                    col.attachedRigidbody.isKinematic = false;
+                    tossObject(col.attachedRigidbody);
+                }
             };
+        }
+
+        if (col.gameObject.GetComponent<WheelControl>())
+        {
+            float initialAngle = col.gameObject.transform.eulerAngles.x;
+
+            if (device.GetPress(SteamVR_Controller.ButtonMask.Grip))
+            {
+                float gripY = gameObject.transform.position.y;
+                float gripZ = gameObject.transform.position.z;
+                float wheelZ = col.gameObject.transform.position.z;
+                float wheelY = col.gameObject.transform.position.y;
+
+                float numerator = gripY - wheelY;
+                float denominator = gripZ - wheelZ;
+
+                denominator = denominator == 0 ? 0.0000000000001F : denominator ;
+
+                float oppOverAdj = numerator / denominator;
+
+                float angle = Mathf.Atan(oppOverAdj) * 180 / Mathf.PI;
+
+                Debug.Log("angle: " + (initialAngle - angle));
+                
+                col.gameObject.transform.eulerAngles = new Vector3(initialAngle - angle, 0F, 0F);
+            }
         }
     }
 
