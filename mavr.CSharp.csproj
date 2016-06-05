@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>5.3.5f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -72,10 +70,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AltitudeControl.cs" />
-    <Compile Include="Assets\Scripts\Dirigible.cs" />
     <Compile Include="Assets\Scripts\CylinderBehavior.cs" />
+    <Compile Include="Assets\Scripts\Dirigible.cs" />
+    <Compile Include="Assets\Scripts\HandController.cs" />
     <Compile Include="Assets\Scripts\PickupParent.cs" />
+    <Compile Include="Assets\Scripts\ThrustControl.cs" />
     <Compile Include="Assets\Scripts\TossableObject.cs" />
+    <Compile Include="Assets\Scripts\WheelControl.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />
@@ -108,8 +109,6 @@
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_TrackedObject.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_UpdatePoses.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Utils.cs" />
-    <Compile Include="Assets\Scripts\ThrustControl.cs" />
-    <Compile Include="Assets\Scripts\WheelControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />
