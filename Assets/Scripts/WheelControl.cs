@@ -3,7 +3,7 @@ using System.Collections;
 
 public class WheelControl : MonoBehaviour
 {
-    public float rotationValue;
+    public float rotationValue = 0F;
     public Transform lookAtTarget = null;
     Vector3 point;
 

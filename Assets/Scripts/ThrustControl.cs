@@ -4,12 +4,12 @@ using System.Collections;
 public class ThrustControl : MonoBehaviour
 {
     public float thrust = 0F;
-    float initialZ;
+    float initialX;
 
-    // Use this for initialization
-    void Start()
+    // Use this for initial.xation
+    void Awake()
     {
-        initialZ = transform.position.z;
+        initialX = transform.position.x;
     }
 
     void FixedUpdate()
@@ -23,12 +23,11 @@ public class ThrustControl : MonoBehaviour
             SteamVR_Controller.Device device = col.gameObject.GetComponent<HandController>().device;
             if (device.GetPress(SteamVR_Controller.ButtonMask.Grip))
             {
-                Debug.Log("Inside GetPress");
                 Vector3 pos = transform.position;
-                pos.z = col.gameObject.transform.position.z;
+                pos.x = col.gameObject.transform.position.x;
                 transform.position = pos;
 
-                thrust = initialZ - transform.position.z;
+                thrust = initialX - transform.position.x;
             }
         }
     }
