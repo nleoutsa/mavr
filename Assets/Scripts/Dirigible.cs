@@ -17,15 +17,15 @@ public class Dirigible : MonoBehaviour {
         if (altitude_control.altitude != 0)
         {
             Vector3 altitudeVector = transform.up;
-            altitudeVector.y += altitude_control.altitude / 100F;
+            altitudeVector.y += altitude_control.altitude;
             rigidBody.AddForce(altitudeVector, ForceMode.Acceleration);
             Debug.Log("altVal: " + altitude_control.altitude + ", vec: " + altitudeVector.y);
         }
 
         if (thrust_control.thrust != 0 )
         {
-            Vector3 thrustVector = transform.up;
-            thrustVector.x += thrust_control.thrust / 100F;
+            Vector3 thrustVector = transform.forward;
+            thrustVector.x += thrust_control.thrust;
             rigidBody.AddForce(thrustVector, ForceMode.Acceleration);
             Debug.Log("thrust: " + thrust_control.thrust + ", vec: " + thrustVector.x);
         }

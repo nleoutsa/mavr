@@ -12,10 +12,6 @@ public class ThrustControl : MonoBehaviour
         initialX = transform.position.x;
     }
 
-    void FixedUpdate()
-    {
-    }
-
     void OnTriggerStay(Collider col)
     {
         if (col.gameObject.GetComponent<HandController>())
@@ -28,6 +24,8 @@ public class ThrustControl : MonoBehaviour
                 transform.position = pos;
 
                 thrust = initialX - transform.position.x;
+
+                Debug.Log("initX: " + initialX + ", posX: " + transform.position.x + ", thrust: " + thrust);
             }
         }
     }
