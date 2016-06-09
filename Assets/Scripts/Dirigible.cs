@@ -18,7 +18,7 @@ public class Dirigible : MonoBehaviour {
         {
             Vector3 altitudeVector = transform.up;
             altitudeVector.y += altitude_control.altitude;
-            rigidBody.AddForce(altitudeVector, ForceMode.Acceleration);
+            rigidBody.AddForce(altitudeVector, ForceMode.Impulse);
             Debug.Log("altVal: " + altitude_control.altitude + ", vec: " + altitudeVector.y);
         }
 
@@ -26,13 +26,13 @@ public class Dirigible : MonoBehaviour {
         {
             Vector3 thrustVector = transform.forward;
             thrustVector.x += thrust_control.thrust;
-            rigidBody.AddForce(thrustVector, ForceMode.Acceleration);
+            rigidBody.AddForce(thrustVector, ForceMode.Impulse);
             Debug.Log("thrust: " + thrust_control.thrust + ", vec: " + thrustVector.x);
         }
-// 
-//         Vector3 rotationVector = transform.up;
-//         rotationVector.y += wheel_control.rotationValue / 100F;
-//         rigidBody.AddTorque(rotationVector, ForceMode.Acceleration);
-//         Debug.Log("rotationVal: " + wheel_control.rotationValue + ", vec: " + rotationVector.y);
+
+        Quaternion rotationQuaternion = transform.rotation;
+        rotationQuaternion.y += wheel_control.rotationValue / 100F;
+        rigidBody.AddTorque(rotationQuaternion.x / Time.fixedDeltaTime, rotationQuaternion.y / Time.fixedDeltaTime, rotationQuaternion.z / Time.fixedDeltaTime, ForceMode.VelocityChange);
+        Debug.Log("rotationVal: " + wheel_control.rotationValue);
 	}
 }
