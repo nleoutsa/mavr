@@ -1,49 +1,48 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WheelControl : MonoBehaviour
-{
-    public float rotationValue = 0F;
-    public Transform lookAtTarget = null;
-    Vector3 point;
+public class WheelControl : MonoBehaviour {
 
-    void Awake()
-    {
-    }
+    public GameObject Airship;
+
+    CharacterJoint joint;
+    SteamVR_Controller.Device device;
+
+    float rot_deg = 0F;
 
     void FixedUpdate()
     {
-        if (lookAtTarget)
+        if (joint != null)
         {
-            point = lookAtTarget.position;
-            point.x = transform.position.x;
-            transform.LookAt(point, transform.up);
-            transform.localEulerAngles = new Vector3(transform.eulerAngles.x, 0F, 0F);
-            rotationValue = transform.eulerAngles.x;
+            float x = joint.connectedBody.transform.localEulerAngles.x;
+            rot_deg = x > 180F ? x - 360F : x;
+
+            if (device.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
+            {
+                Object.Destroy(joint);
+                joint = null;
+            }
         }
+        else
+        {
+            rot_deg = 0F;
+        }
+
+        Airship.GetComponent<Rigidbody>().maxAngularVelocity = 10;
+        Airship.GetComponent<Rigidbody>().AddTorque(Airship.transform.up * rot_deg * 0.01F, ForceMode.VelocityChange);
+        Airship.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
-    
+
     void OnTriggerStay(Collider col)
     {
         if (col.gameObject.GetComponent<HandController>())
         {
-            SteamVR_Controller.Device device = col.gameObject.GetComponent<HandController>().device;
-            if (device.GetPress(SteamVR_Controller.ButtonMask.Grip))
+            device = col.gameObject.GetComponent<HandController>().device;
+            if (joint == null && device.GetPress(SteamVR_Controller.ButtonMask.Grip))
             {
-                lookAtTarget = col.gameObject.transform;
-            }
-            if (device.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
-            {
-                lookAtTarget = null;
-            }
-        }
-    }
-
-    void OnTriggerExit(Collider col)
-    {
-        if (col.gameObject.GetComponent<HandController>())
-        {
-            lookAtTarget = null;
+                joint = col.gameObject.AddComponent<CharacterJoint>();
+                joint.connectedBody = gameObject.GetComponent<Rigidbody>();
+            }   
         }
     }
 }
