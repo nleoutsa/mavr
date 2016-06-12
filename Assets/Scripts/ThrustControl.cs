@@ -1,32 +1,49 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ThrustControl : MonoBehaviour
-{
-    public float thrust = 0F;
-    float initialX;
+public class ThrustControl : MonoBehaviour {
 
-    // Use this for initial.xation
+    public float thrust_amount = 0F;
+
+    CharacterJoint joint;
+    SteamVR_Controller.Device device;
+    float thrust_angle = 0F;
+
     void Awake()
     {
-        initialX = transform.position.x;
+    }
+
+    void FixedUpdate()
+    {
+        if (joint != null)
+        {
+            thrust_angle = joint.connectedBody.transform.eulerAngles.z;
+
+            if (device.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
+            {
+                Debug.Log("Destroying joint");
+                Object.Destroy(joint);
+                joint = null;
+            }
+        }
+        else
+        {
+            thrust_angle = 0F;
+        }
+
+        thrust_amount = thrust_angle > 180F ? thrust_angle - 360F : thrust_angle;
     }
 
     void OnTriggerStay(Collider col)
     {
         if (col.gameObject.GetComponent<HandController>())
         {
-            SteamVR_Controller.Device device = col.gameObject.GetComponent<HandController>().device;
-            if (device.GetPress(SteamVR_Controller.ButtonMask.Grip))
+            device = col.gameObject.GetComponent<HandController>().device;
+            if (joint == null && device.GetPress(SteamVR_Controller.ButtonMask.Grip))
             {
-                Vector3 pos = transform.position;
-                pos.x = col.gameObject.transform.position.x;
-                transform.position = pos;
-
-                thrust = initialX - transform.position.x;
-
-                Debug.Log("initX: " + initialX + ", posX: " + transform.position.x + ", thrust: " + thrust);
-            }
+                joint = col.gameObject.AddComponent<CharacterJoint>();
+                joint.connectedBody = gameObject.GetComponent<Rigidbody>();
+            }   
         }
     }
 }
