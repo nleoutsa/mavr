@@ -5,18 +5,25 @@ public class ThrustControl : MonoBehaviour {
 
 
     public GameObject Airship;
+    Rigidbody airshipBody;
 
     CharacterJoint joint;
     SteamVR_Controller.Device device;
 
-    float thrust_amount = 0F;
-    float thrust_angle = 0F;
+    void Awake ()
+    {
+        airshipBody = Airship.GetComponent<Rigidbody>();
+    }
 
     void FixedUpdate()
     {
         if (joint != null)
         {
-            thrust_angle = joint.connectedBody.transform.localEulerAngles.z;
+            float angle = joint.connectedBody.transform.localEulerAngles.z;
+
+            angle = angle > 180F ? angle - 360F : angle;
+
+            airshipBody.AddForce(Airship.transform.forward * angle, ForceMode.Impulse); 
 
             if (device.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
             {
@@ -24,14 +31,6 @@ public class ThrustControl : MonoBehaviour {
                 joint = null;
             }
         }
-        else
-        {
-            thrust_angle = 0F;
-        }
-
-        thrust_amount = thrust_angle > 180F ? thrust_angle - 360F : thrust_angle;
-
-        Airship.GetComponent<Rigidbody>().AddForce(Airship.transform.forward * thrust_amount, ForceMode.Impulse); 
     }
 
     void OnTriggerStay(Collider col)

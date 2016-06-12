@@ -5,17 +5,26 @@ public class WheelControl : MonoBehaviour {
 
     public GameObject Airship;
 
+    Rigidbody airshipBody;
+
     CharacterJoint joint;
     SteamVR_Controller.Device device;
 
-    float rot_deg = 0F;
+    void Awake ()
+    {
+        airshipBody = Airship.GetComponent<Rigidbody>();
+    }
 
     void FixedUpdate()
     {
         if (joint != null)
         {
             float x = joint.connectedBody.transform.localEulerAngles.x;
-            rot_deg = x > 180F ? x - 360F : x;
+            float rot_deg = x > 180F ? x - 360F : x;
+
+            airshipBody.maxAngularVelocity = 100F;
+            airshipBody.AddTorque(Airship.transform.up * rot_deg, ForceMode.VelocityChange);
+            airshipBody.angularVelocity = Vector3.zero;
 
             if (device.GetPressUp(SteamVR_Controller.ButtonMask.Grip))
             {
@@ -23,14 +32,6 @@ public class WheelControl : MonoBehaviour {
                 joint = null;
             }
         }
-        else
-        {
-            rot_deg = 0F;
-        }
-
-        Airship.GetComponent<Rigidbody>().maxAngularVelocity = 10;
-        Airship.GetComponent<Rigidbody>().AddTorque(Airship.transform.up * rot_deg * 0.01F, ForceMode.VelocityChange);
-        Airship.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
 
     void OnTriggerStay(Collider col)
