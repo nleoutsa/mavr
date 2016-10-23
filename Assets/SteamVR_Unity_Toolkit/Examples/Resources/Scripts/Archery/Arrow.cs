@@ -67,7 +67,7 @@
         {
             if (inFlight)
             {
-                Debug.Log("Collided with " + collision.gameObject.name);
+//                Debug.Log("Collided with " + collision.gameObject.name);
                 StickAfterCollision(collision);
             }
         }

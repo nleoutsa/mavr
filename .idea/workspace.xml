@@ -292,28 +292,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Arrow.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/SteamVR_Unity_Toolkit/Examples/Resources/Scripts/Archery/Arrow.cs">
+      <file leaf-file-name="TurnDirigibleControl.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/TurnDirigibleControl.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+            <state relative-caret-position="112">
+              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
               <folding>
-                <marker date="1477250668998" expanded="true" signature="31:3484" ph="{...}" />
-                <marker date="1477250668998" expanded="true" signature="44:86" ph="..." />
-                <marker date="1477250668998" expanded="true" signature="126:3482" ph="{...}" />
-                <marker date="1477250668998" expanded="true" signature="529:625" ph="{...}" />
-                <marker date="1477250668998" expanded="true" signature="655:735" ph="{...}" />
-                <marker date="1477250668998" expanded="true" signature="764:865" ph="{...}" />
-                <marker date="1477250668998" expanded="true" signature="899:1037" ph="{...}" />
-                <marker date="1477250668998" expanded="true" signature="1067:1163" ph="{...}" />
-                <marker date="1477250668998" expanded="true" signature="1197:1379" ph="{...}" />
-                <marker date="1477250668998" expanded="true" signature="1415:1565" ph="{...}" />
-                <marker date="1477250668998" expanded="true" signature="1625:1820" ph="{...}" />
-                <marker date="1477250668998" expanded="true" signature="1858:2386" ph="{...}" />
-                <marker date="1477250668998" expanded="true" signature="2425:2737" ph="{...}" />
-                <marker date="1477250668998" expanded="true" signature="2784:2883" ph="{...}" />
-                <marker date="1477250668998" expanded="true" signature="2916:3050" ph="{...}" />
-                <marker date="1477250668998" expanded="true" signature="3112:3476" ph="{...}" />
+                <marker date="1477264977247" expanded="true" signature="14:661" ph="{...}" />
+                <marker date="1477264977247" expanded="true" signature="27:69" ph="..." />
+                <marker date="1477264977247" expanded="true" signature="168:659" ph="{...}" />
+                <marker date="1477264977247" expanded="true" signature="320:653" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThrustControl.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/ThrustControl.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+              <folding>
+                <marker date="1477264981150" expanded="true" signature="6:44" ph="..." />
+                <marker date="1477264981150" expanded="true" signature="60:524" ph="{...}" />
+                <marker date="1477264981150" expanded="true" signature="73:115" ph="..." />
+                <marker date="1477264981150" expanded="true" signature="163:522" ph="{...}" />
+                <marker date="1477264981150" expanded="true" signature="281:516" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ElevationControl.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/ElevationControl.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="560">
+              <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+              <folding>
+                <marker date="1477264828543" expanded="true" signature="14:1100" ph="{...}" />
+                <marker date="1477264828543" expanded="true" signature="27:69" ph="..." />
+                <marker date="1477264828543" expanded="true" signature="120:1098" ph="{...}" />
+                <marker date="1477264828543" expanded="true" signature="401:679" ph="{...}" />
+                <marker date="1477264828543" expanded="true" signature="710:1092" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -336,6 +356,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Arrow.cs" />
         <option value="$PROJECT_DIR$/Assets/SteamVR_Unity_Toolkit/Examples/Resources/Scripts/Archery/ArrowNotch.cs" />
         <option value="$PROJECT_DIR$/Assets/SteamVR_Unity_Toolkit/Examples/Resources/Scripts/Archery/Arrow.cs" />
+        <option value="$PROJECT_DIR$/Assets/turnWheel.cs" />
+        <option value="$PROJECT_DIR$/Assets/rotateDirigible.cs" />
+        <option value="$PROJECT_DIR$/Assets/ElevateDirigible.cs" />
+        <option value="$PROJECT_DIR$/Assets/thrustDirigible.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ElevationControl.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TurnDirigibleControl.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ThrustControl.cs" />
       </list>
     </option>
   </component>
@@ -373,7 +400,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/mavr.CSharp.Editor.csproj" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
@@ -421,7 +448,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1456" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -619,27 +646,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/turnWheel.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ElevateDirigible.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/SteamVR_Unity_Toolkit/Examples/Resources/Scripts/Archery/Arrow.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+        <state relative-caret-position="768">
+          <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
           <folding>
-            <marker date="1477250668998" expanded="true" signature="31:3484" ph="{...}" />
-            <marker date="1477250668998" expanded="true" signature="44:86" ph="..." />
-            <marker date="1477250668998" expanded="true" signature="126:3482" ph="{...}" />
-            <marker date="1477250668998" expanded="true" signature="529:625" ph="{...}" />
-            <marker date="1477250668998" expanded="true" signature="655:735" ph="{...}" />
-            <marker date="1477250668998" expanded="true" signature="764:865" ph="{...}" />
-            <marker date="1477250668998" expanded="true" signature="899:1037" ph="{...}" />
-            <marker date="1477250668998" expanded="true" signature="1067:1163" ph="{...}" />
-            <marker date="1477250668998" expanded="true" signature="1197:1379" ph="{...}" />
-            <marker date="1477250668998" expanded="true" signature="1415:1565" ph="{...}" />
-            <marker date="1477250668998" expanded="true" signature="1625:1820" ph="{...}" />
-            <marker date="1477250668998" expanded="true" signature="1858:2386" ph="{...}" />
-            <marker date="1477250668998" expanded="true" signature="2425:2737" ph="{...}" />
-            <marker date="1477250668998" expanded="true" signature="2784:2883" ph="{...}" />
-            <marker date="1477250668998" expanded="true" signature="2916:3050" ph="{...}" />
-            <marker date="1477250668998" expanded="true" signature="3112:3476" ph="{...}" />
+            <marker date="1477251982269" expanded="true" signature="31:3486" ph="{...}" />
+            <marker date="1477251982269" expanded="true" signature="44:86" ph="..." />
+            <marker date="1477251982269" expanded="true" signature="126:3484" ph="{...}" />
+            <marker date="1477251982269" expanded="true" signature="529:625" ph="{...}" />
+            <marker date="1477251982269" expanded="true" signature="655:735" ph="{...}" />
+            <marker date="1477251982269" expanded="true" signature="764:865" ph="{...}" />
+            <marker date="1477251982269" expanded="true" signature="899:1037" ph="{...}" />
+            <marker date="1477251982269" expanded="true" signature="1067:1163" ph="{...}" />
+            <marker date="1477251982269" expanded="true" signature="1197:1379" ph="{...}" />
+            <marker date="1477251982269" expanded="true" signature="1415:1565" ph="{...}" />
+            <marker date="1477251982269" expanded="true" signature="1625:1822" ph="{...}" />
+            <marker date="1477251982269" expanded="true" signature="1860:2388" ph="{...}" />
+            <marker date="1477251982269" expanded="true" signature="2427:2739" ph="{...}" />
+            <marker date="1477251982269" expanded="true" signature="2786:2885" ph="{...}" />
+            <marker date="1477251982269" expanded="true" signature="2918:3052" ph="{...}" />
+            <marker date="1477251982269" expanded="true" signature="3114:3478" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/thrustDirigible.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/rotateDirigible.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/TurnDirigibleControl.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding>
+            <marker date="1477264977247" expanded="true" signature="14:661" ph="{...}" />
+            <marker date="1477264977247" expanded="true" signature="27:69" ph="..." />
+            <marker date="1477264977247" expanded="true" signature="168:659" ph="{...}" />
+            <marker date="1477264977247" expanded="true" signature="320:653" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ElevationControl.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+          <folding>
+            <marker date="1477264828543" expanded="true" signature="14:1100" ph="{...}" />
+            <marker date="1477264828543" expanded="true" signature="27:69" ph="..." />
+            <marker date="1477264828543" expanded="true" signature="120:1098" ph="{...}" />
+            <marker date="1477264828543" expanded="true" signature="401:679" ph="{...}" />
+            <marker date="1477264828543" expanded="true" signature="710:1092" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ThrustControl.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <folding>
+            <marker date="1477264981150" expanded="true" signature="6:44" ph="..." />
+            <marker date="1477264981150" expanded="true" signature="60:524" ph="{...}" />
+            <marker date="1477264981150" expanded="true" signature="73:115" ph="..." />
+            <marker date="1477264981150" expanded="true" signature="163:522" ph="{...}" />
+            <marker date="1477264981150" expanded="true" signature="281:516" ph="{...}" />
           </folding>
         </state>
       </provider>
