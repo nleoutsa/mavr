@@ -292,18 +292,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ArrowSpawner.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/SteamVR_Unity_Toolkit/Examples/Resources/Scripts/Archery/ArrowSpawner.cs">
+      <file leaf-file-name="Arrow.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/SteamVR_Unity_Toolkit/Examples/Resources/Scripts/Archery/Arrow.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="880">
-              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+            <state relative-caret-position="432">
+              <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
               <folding>
-                <marker date="1477244723493" expanded="true" signature="6:30" ph="..." />
-                <marker date="1477244723493" expanded="true" signature="73:1874" ph="{...}" />
-                <marker date="1477244723493" expanded="true" signature="235:277" ph="{...}" />
-                <marker date="1477244723493" expanded="true" signature="328:1236" ph="{...}" />
-                <marker date="1477244723493" expanded="true" signature="1300:1481" ph="{...}" />
-                <marker date="1477244723493" expanded="true" signature="1537:1872" ph="{...}" />
+                <marker date="1477250668998" expanded="true" signature="31:3484" ph="{...}" />
+                <marker date="1477250668998" expanded="true" signature="44:86" ph="..." />
+                <marker date="1477250668998" expanded="true" signature="126:3482" ph="{...}" />
+                <marker date="1477250668998" expanded="true" signature="529:625" ph="{...}" />
+                <marker date="1477250668998" expanded="true" signature="655:735" ph="{...}" />
+                <marker date="1477250668998" expanded="true" signature="764:865" ph="{...}" />
+                <marker date="1477250668998" expanded="true" signature="899:1037" ph="{...}" />
+                <marker date="1477250668998" expanded="true" signature="1067:1163" ph="{...}" />
+                <marker date="1477250668998" expanded="true" signature="1197:1379" ph="{...}" />
+                <marker date="1477250668998" expanded="true" signature="1415:1565" ph="{...}" />
+                <marker date="1477250668998" expanded="true" signature="1625:1820" ph="{...}" />
+                <marker date="1477250668998" expanded="true" signature="1858:2386" ph="{...}" />
+                <marker date="1477250668998" expanded="true" signature="2425:2737" ph="{...}" />
+                <marker date="1477250668998" expanded="true" signature="2784:2883" ph="{...}" />
+                <marker date="1477250668998" expanded="true" signature="2916:3050" ph="{...}" />
+                <marker date="1477250668998" expanded="true" signature="3112:3476" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -320,8 +330,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PickupParent.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/Editor/Rider/RiderPlugin.cs" />
         <option value="$PROJECT_DIR$/Assets/SteamVR/Scripts/SteamVR.cs" />
-        <option value="$PROJECT_DIR$/Assets/SteamVR_Unity_Toolkit/Examples/Resources/Scripts/Archery/ArrowNotch.cs" />
         <option value="$PROJECT_DIR$/Assets/SteamVR_Unity_Toolkit/Examples/Resources/Scripts/Archery/ArrowSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/ArrowFired.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ArrowFired.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Arrow.cs" />
+        <option value="$PROJECT_DIR$/Assets/SteamVR_Unity_Toolkit/Examples/Resources/Scripts/Archery/ArrowNotch.cs" />
+        <option value="$PROJECT_DIR$/Assets/SteamVR_Unity_Toolkit/Examples/Resources/Scripts/Archery/Arrow.cs" />
       </list>
     </option>
   </component>
@@ -364,6 +378,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nleoutsa\code\mavr\Assets\Scripts" />
       <recent name="C:\Users\nleoutsa\code\mavr\Assets\SteamVR_Unity_Toolkit\Examples\Resources\Scripts\Archery" />
     </key>
   </component>
@@ -550,31 +565,81 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/ArrowFired.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ArrowFired.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/SteamVR_Unity_Toolkit/Examples/Resources/Scripts/Archery/ArrowNotch.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="592">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
-            <marker date="1477238198218" expanded="true" signature="6:30" ph="..." />
-            <marker date="1477238198218" expanded="true" signature="71:1079" ph="{...}" />
-            <marker date="1477238198218" expanded="true" signature="170:294" ph="{...}" />
-            <marker date="1477238198218" expanded="true" signature="346:778" ph="{...}" />
-            <marker date="1477238198218" expanded="true" signature="815:1077" ph="{...}" />
+            <marker date="1477250364006" expanded="true" signature="31:1223" ph="{...}" />
+            <marker date="1477250364006" expanded="true" signature="216:356" ph="{...}" />
+            <marker date="1477250364006" expanded="true" signature="412:888" ph="{...}" />
+            <marker date="1477250364006" expanded="true" signature="929:1215" ph="{...}" />
+            <marker date="1477250364006" expanded="true" signature="1215:1221" ph="{...}" />
+            <marker date="1477250364006" expanded="true" signature="1215:1223" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/SteamVR_Unity_Toolkit/Examples/Resources/Scripts/Archery/ArrowSpawner.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state relative-caret-position="144">
+          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
           <folding>
-            <marker date="1477244723493" expanded="true" signature="6:30" ph="..." />
-            <marker date="1477244723493" expanded="true" signature="73:1874" ph="{...}" />
-            <marker date="1477244723493" expanded="true" signature="235:277" ph="{...}" />
-            <marker date="1477244723493" expanded="true" signature="328:1236" ph="{...}" />
-            <marker date="1477244723493" expanded="true" signature="1300:1481" ph="{...}" />
-            <marker date="1477244723493" expanded="true" signature="1537:1872" ph="{...}" />
+            <marker date="1474372756000" expanded="true" signature="31:1914" ph="{...}" />
+            <marker date="1474372756000" expanded="true" signature="103:1912" ph="{...}" />
+            <marker date="1474372756000" expanded="true" signature="289:343" ph="{...}" />
+            <marker date="1474372756000" expanded="true" signature="398:1121" ph="{...}" />
+            <marker date="1474372756000" expanded="true" signature="1189:1382" ph="{...}" />
+            <marker date="1474372756000" expanded="true" signature="1442:1906" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Arrow.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/SteamVR_Unity_Toolkit/Examples/Resources/Scripts/Archery/Arrow.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+          <folding>
+            <marker date="1477250668998" expanded="true" signature="31:3484" ph="{...}" />
+            <marker date="1477250668998" expanded="true" signature="44:86" ph="..." />
+            <marker date="1477250668998" expanded="true" signature="126:3482" ph="{...}" />
+            <marker date="1477250668998" expanded="true" signature="529:625" ph="{...}" />
+            <marker date="1477250668998" expanded="true" signature="655:735" ph="{...}" />
+            <marker date="1477250668998" expanded="true" signature="764:865" ph="{...}" />
+            <marker date="1477250668998" expanded="true" signature="899:1037" ph="{...}" />
+            <marker date="1477250668998" expanded="true" signature="1067:1163" ph="{...}" />
+            <marker date="1477250668998" expanded="true" signature="1197:1379" ph="{...}" />
+            <marker date="1477250668998" expanded="true" signature="1415:1565" ph="{...}" />
+            <marker date="1477250668998" expanded="true" signature="1625:1820" ph="{...}" />
+            <marker date="1477250668998" expanded="true" signature="1858:2386" ph="{...}" />
+            <marker date="1477250668998" expanded="true" signature="2425:2737" ph="{...}" />
+            <marker date="1477250668998" expanded="true" signature="2784:2883" ph="{...}" />
+            <marker date="1477250668998" expanded="true" signature="2916:3050" ph="{...}" />
+            <marker date="1477250668998" expanded="true" signature="3112:3476" ph="{...}" />
           </folding>
         </state>
       </provider>
