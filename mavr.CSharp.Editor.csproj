@@ -38,6 +38,20 @@
     <LangVersion>5</LangVersion>
     <LangVersion>5</LangVersion>
     <LangVersion>5</LangVersion>
+    <LangVersion>5</LangVersion>
+    <LangVersion>5</LangVersion>
+    <LangVersion>5</LangVersion>
+    <LangVersion>5</LangVersion>
+    <LangVersion>5</LangVersion>
+    <LangVersion>5</LangVersion>
+    <LangVersion>5</LangVersion>
+    <LangVersion>5</LangVersion>
+    <LangVersion>5</LangVersion>
+    <LangVersion>5</LangVersion>
+    <LangVersion>5</LangVersion>
+    <LangVersion>5</LangVersion>
+    <LangVersion>5</LangVersion>
+    <LangVersion>5</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>

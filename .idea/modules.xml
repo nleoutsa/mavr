@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/mavr.CSharp.Editor.sln.iml" filepath="$PROJECT_DIR$/mavr.CSharp.Editor.sln.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mavr.sln.iml" filepath="$PROJECT_DIR$/mavr.sln.iml" />
     </modules>
   </component>
 </project>

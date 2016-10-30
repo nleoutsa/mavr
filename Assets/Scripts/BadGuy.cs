@@ -13,6 +13,7 @@ public class BadGuy : MonoBehaviour {
 
     void OnCollisionEnter (Collision collision)
     {
+        // TODO: animation for taking damage
         var damage = collision.gameObject.GetComponent<Damage>(); 
 
         if (damage)
@@ -30,6 +31,7 @@ public class BadGuy : MonoBehaviour {
 
     private void Die ()
     {
+        // TODO: animation / destruction of mesh
         Destroy(gameObject, 0);
     }
 }

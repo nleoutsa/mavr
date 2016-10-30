@@ -1,4 +1,6 @@
-﻿namespace VRTK.Examples.Archery
+﻿using System;
+
+namespace VRTK.Examples.Archery
 {
     using UnityEngine;
     using System.Collections;
@@ -10,6 +12,7 @@
         [HideInInspector] public bool inFlight = false;
 
         private bool collided = false;
+        private bool fired = false;
         private Rigidbody rigidBody;
         private GameObject arrowHolder;
         private Vector3 originalPosition;
@@ -32,6 +35,7 @@
         {
             StartCoroutine(EmitSmoke());
             DestroyArrow(maxArrowLife);
+            StartCoroutine(SetFired());
         }
 
         public void ResetArrow()
@@ -57,7 +61,7 @@
 
         private void FixedUpdate()
         {
-            if (!collided)
+            if (!collided && rigidBody != null)
             {
                 transform.LookAt(transform.position + rigidBody.velocity);
             }
@@ -67,8 +71,28 @@
         {
             if (inFlight)
             {
-//                Debug.Log("Collided with " + collision.gameObject.name);
                 StickAfterCollision(collision);
+            }
+        }
+
+        private void OnTriggerStay(Collider collider)
+        {
+
+            // TODO MAKE THIS WORK! Need to reset arrow so it can be picked up again, but still allowing it to stick into walls
+            if (fired)
+            {
+                VRTK_ControllerEvents controllerEvents = collider.GetComponentInParent<VRTK_ControllerEvents>();
+
+                if (controllerEvents != null && controllerEvents.grabPressed)
+                {
+                    VRTK_InteractGrab grabbingController = collider.GetComponentInParent<VRTK_InteractGrab>();
+
+                    fired = false;
+                    gameObject.AddComponent<Rigidbody>();
+                    gameObject.GetComponent<Collider>().isTrigger = false;
+                    ResetArrow();
+                    StartCoroutine(grabArrow(grabbingController));
+                }
             }
         }
 
@@ -98,14 +122,30 @@
 
         private void DestroyArrow(float time)
         {
-            Destroy(arrowHolder, time);
-            Destroy(gameObject, time);
+            if (fired)
+            {
+                Destroy(arrowHolder, time);
+                Destroy(gameObject, time);
+            }
         }
 
         IEnumerator EmitSmoke()
         {
             yield return new WaitForSeconds(0.05f);
             gameObject.GetComponent<ParticleSystem>().Play();
+        }
+
+        IEnumerator SetFired()
+        {
+            yield return new WaitForSeconds(0.05f);
+            fired = true;
+        }
+
+        IEnumerator grabArrow(VRTK_InteractGrab grabbingController)
+        {
+            yield return new WaitForSeconds(0.05f);
+            fired = true;
+            grabbingController.AttemptGrab();
         }
 
         public void StickAfterCollision(Collision collision)
@@ -115,9 +155,10 @@
 
             // child the arrow to the collided object
             transform.parent = collision.transform;
-            //Destroy the arrow's rigidbody2D and collider2D
+            //Destroy the arrow's rigidbody2D
             Destroy(gameObject.GetComponent<Rigidbody>());
-            Destroy(gameObject.GetComponent<Collider>());
+            // Set collider to trigger
+            gameObject.GetComponent<Collider>().isTrigger = true;
         }
     }
 }

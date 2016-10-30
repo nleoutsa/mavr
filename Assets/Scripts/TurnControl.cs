@@ -16,7 +16,7 @@
             float angleY = (Quaternion.Inverse(transform.parent.transform.localRotation) * transform.localRotation).y;
 
             Rudder.transform.localRotation = new Quaternion(0, angleY / 2, 0, transform.localRotation.w);
-            Airship.transform.Rotate(0, -angleY * turnSpeedMultiplier, 0, Space.Self);
+            Airship.transform.Rotate(0, -angleY * 0.1f *  turnSpeedMultiplier, 0, Space.Self);
         }
     }
 }
